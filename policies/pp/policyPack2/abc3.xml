@@ -4,5 +4,9 @@
         <L7p:CommentAssertion>
             <L7p:Comment stringValue="Policy Fragment: abc3"/>
         </L7p:CommentAssertion>
+        <L7p:Include>
+            <L7p:PolicyGuid stringValue="80ec82cd-3fb4-4a30-b098-5c17339a8681"/>
+            <L7p:PolicyName stringValue="abc4"/>
+        </L7p:Include>
     </wsp:All>
 </wsp:Policy>
