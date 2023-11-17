@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsp:Policy xmlns:L7p="http://www.layer7tech.com/ws/policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2002/12/policy">
+    <wsp:All wsp:Usage="Required">
+        <L7p:CommentAssertion>
+            <L7p:Comment stringValue="***************************"/>
+        </L7p:CommentAssertion>
+        <L7p:CommentAssertion>
+            <L7p:Comment stringValue="** APIIDA: Control Plane Integration"/>
+        </L7p:CommentAssertion>
+        <L7p:CommentAssertion>
+            <L7p:Comment stringValue="***************************"/>
+        </L7p:CommentAssertion>
+        <L7p:CommentAssertion>
+            <L7p:Comment stringValue="* IN: request.http.parameter.apikey"/>
+        </L7p:CommentAssertion>
+        <L7p:CommentAssertion>
+            <L7p:Comment stringValue="* OUT: error.code, error.message"/>
+        </L7p:CommentAssertion>
+        <L7p:CommentAssertion>
+            <L7p:Comment stringValue="**"/>
+        </L7p:CommentAssertion>
+        <L7p:SetVariable>
+            <L7p:Base64Expression stringValue="JHtyZXF1ZXN0Lmh0dHAuaGVhZGVyLmFwaWtleX0="/>
+            <L7p:VariableToSet stringValue="apikey"/>
+        </L7p:SetVariable>
+        <L7p:SetVariable>
+            <L7p:Base64Expression stringValue="JHtzZXJ2aWNlLm9pZH0="/>
+            <L7p:VariableToSet stringValue="apiId"/>
+        </L7p:SetVariable>
+        <L7p:CommentAssertion>
+            <L7p:Comment stringValue="*"/>
+        </L7p:CommentAssertion>
+        <wsp:All wsp:Usage="Required">
+            <L7p:CommentAssertion>
+                <L7p:AssertionComment assertionComment="included">
+                    <L7p:Properties mapValue="included">
+                        <L7p:entry>
+                            <L7p:key stringValue="RIGHT.COMMENT"/>
+                            <L7p:value stringValue=" // Capture incoming request parameters"/>
+                        </L7p:entry>
+                    </L7p:Properties>
+                </L7p:AssertionComment>
+                <L7p:Comment stringValue="**"/>
+            </L7p:CommentAssertion>
+            <L7p:SetVariable>
+                <L7p:Base64Expression stringValue="JHtyZXF1ZXN0LnRpbWUubWlsbGlzfQ=="/>
+                <L7p:VariableToSet stringValue="aacp.analytics.request.time.millis"/>
+            </L7p:SetVariable>
+            <L7p:SetVariable>
+                <L7p:Base64Expression stringValue="JHthcGlrZXl9"/>
+                <L7p:VariableToSet stringValue="aacp.analytics.apikey"/>
+            </L7p:SetVariable>
+            <L7p:SetVariable>
+                <L7p:Base64Expression stringValue="JHtzZXJ2aWNlLm9pZH0="/>
+                <L7p:VariableToSet stringValue="aacp.analytics.service.oid"/>
+            </L7p:SetVariable>
+            <L7p:SetVariable>
+                <L7p:Base64Expression stringValue="JHtzZXJ2aWNlLm5hbWV9"/>
+                <L7p:VariableToSet stringValue="aacp.analytics.service.name"/>
+            </L7p:SetVariable>
+            <L7p:SetVariable>
+                <L7p:Base64Expression stringValue="JHtyZXF1ZXN0LnRjcC5yZW1vdGVJcH0="/>
+                <L7p:VariableToSet stringValue="aacp.analytics.request.tcp.remoteIp"/>
+            </L7p:SetVariable>
+            <L7p:SetVariable>
+                <L7p:Base64Expression stringValue="JHtyZXF1ZXN0Lmh0dHAubWV0aG9kfQ=="/>
+                <L7p:VariableToSet stringValue="aacp.analytics.request.http.method"/>
+            </L7p:SetVariable>
+            <L7p:SetVariable>
+                <L7p:Base64Expression stringValue="JHtyZXF1ZXN0LnNpemV9"/>
+                <L7p:VariableToSet stringValue="aacp.analytics.request.size"/>
+            </L7p:SetVariable>
+            <L7p:SetVariable>
+                <L7p:AssertionComment assertionComment="included">
+                    <L7p:Properties mapValue="included">
+                        <L7p:entry>
+                            <L7p:key stringValue="RIGHT.COMMENT"/>
+                            <L7p:value stringValue=" // Authentication must be performed before enforcement"/>
+                        </L7p:entry>
+                    </L7p:Properties>
+                </L7p:AssertionComment>
+                <L7p:Base64Expression stringValue="JHtyZXF1ZXN0LmF1dGhlbnRpY2F0ZWRVc2VyLmlkfQ=="/>
+                <L7p:VariableToSet stringValue="aacp.analytics.request.authenticatedUser.id"/>
+            </L7p:SetVariable>
+            <L7p:SetVariable>
+                <L7p:AssertionComment assertionComment="included">
+                    <L7p:Properties mapValue="included">
+                        <L7p:entry>
+                            <L7p:key stringValue="RIGHT.COMMENT"/>
+                            <L7p:value stringValue=" // Authentication must be performed before enforcement"/>
+                        </L7p:entry>
+                    </L7p:Properties>
+                </L7p:AssertionComment>
+                <L7p:Base64Expression stringValue="JHtyZXF1ZXN0LmF1dGhlbnRpY2F0ZWRVc2VyLmxvZ2lufQ=="/>
+                <L7p:VariableToSet stringValue="aacp.analytics.request.authenticatedUser.login"/>
+            </L7p:SetVariable>
+            <L7p:SetVariable>
+                <L7p:AssertionComment assertionComment="included">
+                    <L7p:Properties mapValue="included">
+                        <L7p:entry>
+                            <L7p:key stringValue="RIGHT.COMMENT"/>
+                            <L7p:value stringValue=" // Authentication must be performed before enforcement"/>
+                        </L7p:entry>
+                    </L7p:Properties>
+                </L7p:AssertionComment>
+                <L7p:Base64Expression stringValue="JHtyZXF1ZXN0LmF1dGhvcml6ZWR9"/>
+                <L7p:VariableToSet stringValue="aacp.analytics.request.authorized"/>
+            </L7p:SetVariable>
+            <L7p:assertionComment>
+                <L7p:Properties mapValue="included">
+                    <L7p:entry>
+                        <L7p:key stringValue="RIGHT.COMMENT"/>
+                        <L7p:value stringValue=" // analytics"/>
+                    </L7p:entry>
+                </L7p:Properties>
+            </L7p:assertionComment>
+        </wsp:All>
+        <L7p:CommentAssertion>
+            <L7p:Comment stringValue="*"/>
+        </L7p:CommentAssertion>
+        <wsp:OneOrMore wsp:Usage="Required">
+            <wsp:All wsp:Usage="Required">
+                <L7p:Encapsulated>
+                    <L7p:EncapsulatedAssertionConfigGuid stringValue="d7941e61-00ac-4a93-9e95-be61d9b295ac"/>
+                    <L7p:EncapsulatedAssertionConfigName stringValue="APIIDA API Key Lookup"/>
+                    <L7p:Parameters mapValue="included">
+                        <L7p:entry>
+                            <L7p:key stringValue="apikey"/>
+                            <L7p:value stringValue="${apikey}"/>
+                        </L7p:entry>
+                    </L7p:Parameters>
+                </L7p:Encapsulated>
+                <wsp:OneOrMore wsp:Usage="Required">
+                    <L7p:EvaluateJsonPathExpressionV2>
+                        <L7p:Expression stringValue="$.subscribed_plans"/>
+                        <L7p:OtherTargetMessageVariable stringValue="apikeyJson"/>
+                        <L7p:Target target="OTHER"/>
+                        <L7p:VariablePrefix stringValue="_subscribed_plans"/>
+                    </L7p:EvaluateJsonPathExpressionV2>
+                    <L7p:SetVariable>
+                        <L7p:Base64Expression stringValue=""/>
+                        <L7p:VariableToSet stringValue="_subscribed_plans.results"/>
+                    </L7p:SetVariable>
+                </wsp:OneOrMore>
+                <L7p:Encapsulated>
+                    <L7p:EncapsulatedAssertionConfigGuid stringValue="b74b030c-f283-478a-95bb-a760a6bc4dce"/>
+                    <L7p:EncapsulatedAssertionConfigName stringValue="APIIDA API Plan Lookup"/>
+                    <L7p:Parameters mapValue="included">
+                        <L7p:entry>
+                            <L7p:key stringValue="apiId"/>
+                            <L7p:value stringValue="${apiId}"/>
+                        </L7p:entry>
+                        <L7p:entry>
+                            <L7p:key stringValue="subscribed_plans"/>
+                            <L7p:value stringValue="${_subscribed_plans.results}"/>
+                        </L7p:entry>
+                    </L7p:Parameters>
+                </L7p:Encapsulated>
+                <L7p:EvaluateJsonPathExpressionV2>
+                    <L7p:Expression stringValue="$.id"/>
+                    <L7p:OtherTargetMessageVariable stringValue="apiPlanJson"/>
+                    <L7p:Target target="OTHER"/>
+                    <L7p:VariablePrefix stringValue="_plan_id"/>
+                </L7p:EvaluateJsonPathExpressionV2>
+                <L7p:CommentAssertion>
+                    <L7p:Comment stringValue="*"/>
+                </L7p:CommentAssertion>
+                <L7p:SetVariable>
+                    <L7p:Base64Expression stringValue="JHthcGlrZXl9LSR7X3BsYW5faWQucmVzdWx0fQ=="/>
+                    <L7p:VariableToSet stringValue="counterName"/>
+                </L7p:SetVariable>
+                <L7p:Encapsulated>
+                    <L7p:EncapsulatedAssertionConfigGuid stringValue="fbe97e28-fb68-45c8-91b1-e0e57450f047"/>
+                    <L7p:EncapsulatedAssertionConfigName stringValue="APIIDA Apply API Plan Limits"/>
+                    <L7p:Parameters mapValue="included">
+                        <L7p:entry>
+                            <L7p:key stringValue="apiPlanJson"/>
+                            <L7p:value stringValue="apiPlanJson"/>
+                        </L7p:entry>
+                        <L7p:entry>
+                            <L7p:key stringValue="counterName"/>
+                            <L7p:value stringValue="${counterName}"/>
+                        </L7p:entry>
+                    </L7p:Parameters>
+                </L7p:Encapsulated>
+            </wsp:All>
+            <L7p:TrueAssertion/>
+            <L7p:assertionComment>
+                <L7p:Properties mapValue="included">
+                    <L7p:entry>
+                        <L7p:key stringValue="RIGHT.COMMENT"/>
+                        <L7p:value stringValue=" // enforce"/>
+                    </L7p:entry>
+                </L7p:Properties>
+            </L7p:assertionComment>
+        </wsp:OneOrMore>
+        <L7p:ExportVariables>
+            <L7p:ExportedVars stringArrayValue="included">
+                <L7p:item stringValue="aacp.analytics.apikey"/>
+                <L7p:item stringValue="aacp.analytics.request.authenticatedUser.id"/>
+                <L7p:item stringValue="aacp.analytics.request.authenticatedUser.login"/>
+                <L7p:item stringValue="aacp.analytics.request.authorized"/>
+                <L7p:item stringValue="aacp.analytics.request.http.method"/>
+                <L7p:item stringValue="aacp.analytics.request.size"/>
+                <L7p:item stringValue="aacp.analytics.request.tcp.remoteIp"/>
+                <L7p:item stringValue="aacp.analytics.request.time.millis"/>
+                <L7p:item stringValue="aacp.analytics.service.name"/>
+                <L7p:item stringValue="aacp.analytics.service.oid"/>
+                <L7p:item stringValue="error.code"/>
+                <L7p:item stringValue="error.message"/>
+            </L7p:ExportedVars>
+        </L7p:ExportVariables>
+    </wsp:All>
+</wsp:Policy>

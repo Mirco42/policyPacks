@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsp:Policy xmlns:L7p="http://www.layer7tech.com/ws/policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2002/12/policy">
+    <wsp:All wsp:Usage="Required">
+        <L7p:CommentAssertion>
+            <L7p:Comment stringValue="***************************"/>
+        </L7p:CommentAssertion>
+        <L7p:CommentAssertion>
+            <L7p:Comment stringValue="** APIIDA: Control Plane Integration"/>
+        </L7p:CommentAssertion>
+        <L7p:CommentAssertion>
+            <L7p:Comment stringValue="***************************"/>
+        </L7p:CommentAssertion>
+        <L7p:SetVariable>
+            <L7p:Base64Expression stringValue="MA=="/>
+            <L7p:VariableToSet stringValue="error.code"/>
+        </L7p:SetVariable>
+        <L7p:SetVariable>
+            <L7p:Base64Expression stringValue=""/>
+            <L7p:VariableToSet stringValue="error.message"/>
+        </L7p:SetVariable>
+        <L7p:SetVariable>
+            <L7p:Base64Expression stringValue="ZmFsc2U="/>
+            <L7p:VariableToSet stringValue="found"/>
+        </L7p:SetVariable>
+        <L7p:CommentAssertion>
+            <L7p:Comment stringValue="*"/>
+        </L7p:CommentAssertion>
+        <wsp:OneOrMore wsp:Usage="Required">
+            <wsp:All wsp:Usage="Required">
+                <L7p:Encapsulated>
+                    <L7p:EncapsulatedAssertionConfigGuid stringValue="5af3bd30-d1f0-4e79-8cf3-d9b40650d67f"/>
+                    <L7p:EncapsulatedAssertionConfigName stringValue="APIIDA API Control Plane Integration - API-Plans-Retrieve"/>
+                </L7p:Encapsulated>
+                <L7p:XslTransformation>
+                    <L7p:Direction intValue="-1"/>
+                    <L7p:OtherTargetMessageVariable stringValue="apiPlansXml"/>
+                    <L7p:ResourceInfo staticResourceInfo="included">
+                        <L7p:Document stringValueReference="inline"><![CDATA[<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<xsl:template match="@*|node()">
+  <xsl:copy>
+    <xsl:apply-templates select="@*"/>
+    <xsl:apply-templates select="node()">
+      <xsl:sort select="name()"/>
+      <xsl:sort select="."/>
+    </xsl:apply-templates>
+  </xsl:copy>
+</xsl:template>
+</xsl:stylesheet>]]></L7p:Document>
+                    </L7p:ResourceInfo>
+                    <L7p:Target target="OTHER"/>
+                    <L7p:TransformName stringValue=""/>
+                    <L7p:XsltVersion stringValue="1.0"/>
+                </L7p:XslTransformation>
+                <L7p:Regex>
+                    <L7p:AutoTarget booleanValue="false"/>
+                    <L7p:OtherTargetMessageVariable stringValue="subscribed_plans"/>
+                    <L7p:Regex stringValue=" "/>
+                    <L7p:RegexName stringValue="trim"/>
+                    <L7p:Replace booleanValue="true"/>
+                    <L7p:Replacement stringValue=""/>
+                    <L7p:Target target="OTHER"/>
+                </L7p:Regex>
+            </wsp:All>
+            <wsp:All wsp:Usage="Required">
+                <L7p:SetVariable>
+                    <L7p:Base64Expression stringValue="MTAx"/>
+                    <L7p:VariableToSet stringValue="error.code"/>
+                </L7p:SetVariable>
+                <L7p:SetVariable>
+                    <L7p:Base64Expression stringValue="Q2Fubm90IHJldHJpZXZlIEFQSSBQbGFucyE="/>
+                    <L7p:VariableToSet stringValue="error.message"/>
+                </L7p:SetVariable>
+                <wsp:All wsp:Usage="Required">
+                    <L7p:SetVariable>
+                        <L7p:Base64Expression stringValue="JHtlcnJvci5jb2RlfSwke3JlcXVlc3Quc2hhcmVkLmFhY3AuYW5hbHl0aWNzLmVycm9yLmNvZGVzfQ=="/>
+                        <L7p:VariableToSet stringValue="aacp.analytics.error.codes"/>
+                    </L7p:SetVariable>
+                    <L7p:SetVariable>
+                        <L7p:Base64Expression stringValue="JHtlcnJvci5tZXNzYWdlfSwke3JlcXVlc3Quc2hhcmVkLmFhY3AuYW5hbHl0aWNzLmVycm9yLm1lc3NhZ2VzfQ=="/>
+                        <L7p:VariableToSet stringValue="aacp.analytics.error.messages"/>
+                    </L7p:SetVariable>
+                    <L7p:ExportVariables>
+                        <L7p:ExportedVars stringArrayValue="included">
+                            <L7p:item stringValue="aacp.analytics.error.codes"/>
+                            <L7p:item stringValue="aacp.analytics.error.messages"/>
+                            <L7p:item stringValue="error.code"/>
+                            <L7p:item stringValue="error.message"/>
+                        </L7p:ExportedVars>
+                    </L7p:ExportVariables>
+                    <L7p:assertionComment>
+                        <L7p:Properties mapValue="included">
+                            <L7p:entry>
+                                <L7p:key stringValue="RIGHT.COMMENT"/>
+                                <L7p:value stringValue=" // analytics"/>
+                            </L7p:entry>
+                        </L7p:Properties>
+                    </L7p:assertionComment>
+                </wsp:All>
+                <L7p:FalseAssertion/>
+            </wsp:All>
+        </wsp:OneOrMore>
+        <L7p:Split>
+            <L7p:InputVariable stringValue="subscribed_plans"/>
+            <L7p:OutputVariable stringValue="_plans_arr"/>
+        </L7p:Split>
+        <L7p:ForEachLoop L7p:Usage="Required" loopVariable="_plans_arr" variablePrefix="rec">
+            <wsp:OneOrMore wsp:Usage="Required">
+                <wsp:All wsp:Usage="Required">
+                    <L7p:ComparisonAssertion>
+                        <L7p:CaseSensitive booleanValue="false"/>
+                        <L7p:Expression1 stringValue="${found}"/>
+                        <L7p:Operator operatorNull="null"/>
+                        <L7p:Predicates predicates="included">
+                            <L7p:item dataType="included">
+                                <L7p:Type variableDataType="string"/>
+                            </L7p:item>
+                            <L7p:item binary="included">
+                                <L7p:RightValue stringValue="false"/>
+                            </L7p:item>
+                        </L7p:Predicates>
+                    </L7p:ComparisonAssertion>
+                    <L7p:ResponseXpathAssertion>
+                        <L7p:VariablePrefix stringValue="_apiPlanXml"/>
+                        <L7p:XmlMsgSrc stringValue="apiPlansXml"/>
+                        <L7p:XpathExpression xpathExpressionValue="included">
+                            <L7p:Expression stringValue="/ApiPlans/ApiPlan/id[text()=$rec.current]/../apis[text()=$apiId]/.."/>
+                            <L7p:Namespaces mapValue="included">
+                                <L7p:entry>
+                                    <L7p:key stringValue="s"/>
+                                    <L7p:value stringValue="http://schemas.xmlsoap.org/soap/envelope/"/>
+                                </L7p:entry>
+                            </L7p:Namespaces>
+                            <L7p:XpathVersion xpathVersion="XPATH_1_0"/>
+                        </L7p:XpathExpression>
+                    </L7p:ResponseXpathAssertion>
+                    <L7p:SetVariable>
+                        <L7p:Base64Expression stringValue="JHtfYXBpUGxhblhtbC5lbGVtZW50fQ=="/>
+                        <L7p:ContentType stringValue="text/xml; charset=utf-8"/>
+                        <L7p:DataType variableDataType="message"/>
+                        <L7p:VariableToSet stringValue="apiPlanXml"/>
+                    </L7p:SetVariable>
+                    <L7p:JsonTransformation>
+                        <L7p:DestinationMessageTarget MessageTarget="included">
+                            <L7p:OtherTargetMessageVariable stringValue="apiPlanJson"/>
+                            <L7p:Target target="OTHER"/>
+                            <L7p:TargetModifiedByGateway booleanValue="true"/>
+                        </L7p:DestinationMessageTarget>
+                        <L7p:OtherTargetMessageVariable stringValue="apiPlanXml"/>
+                        <L7p:RootTagString stringValue=""/>
+                        <L7p:Target target="OTHER"/>
+                        <L7p:UseNumbersWhenPossible booleanValue="true"/>
+                    </L7p:JsonTransformation>
+                    <L7p:EvaluateJsonPathExpressionV2>
+                        <L7p:Expression stringValue="$.ApiPlan"/>
+                        <L7p:OtherTargetMessageVariable stringValue="apiPlanJson"/>
+                        <L7p:Target target="OTHER"/>
+                        <L7p:VariablePrefix stringValue="apiPlanJson"/>
+                    </L7p:EvaluateJsonPathExpressionV2>
+                    <L7p:SetVariable>
+                        <L7p:Base64Expression stringValue="JHthcGlQbGFuSnNvbi5yZXN1bHR9"/>
+                        <L7p:ContentType stringValue="application/json; charset=utf-8"/>
+                        <L7p:DataType variableDataType="message"/>
+                        <L7p:VariableToSet stringValue="apiPlanJson"/>
+                    </L7p:SetVariable>
+                    <L7p:Regex>
+                        <L7p:AutoTarget booleanValue="false"/>
+                        <L7p:OtherTargetMessageVariable stringValue="apiPlanJson"/>
+                        <L7p:Regex stringValue="(?:\&quot;apis\&quot;:)(?:&quot;)(.*?)(?:\&quot;)"/>
+                        <L7p:RegexName stringValue="json array"/>
+                        <L7p:Replace booleanValue="true"/>
+                        <L7p:Replacement stringValue="&quot;apis&quot;:[&quot;$1&quot;]"/>
+                        <L7p:Target target="OTHER"/>
+                    </L7p:Regex>
+                    <L7p:SetVariable>
+                        <L7p:Base64Expression stringValue="dHJ1ZQ=="/>
+                        <L7p:VariableToSet stringValue="found"/>
+                    </L7p:SetVariable>
+                </wsp:All>
+                <wsp:All wsp:Usage="Required">
+                    <L7p:TrueAssertion/>
+                </wsp:All>
+            </wsp:OneOrMore>
+        </L7p:ForEachLoop>
+        <wsp:OneOrMore wsp:Usage="Required">
+            <L7p:ComparisonAssertion>
+                <L7p:CaseSensitive booleanValue="false"/>
+                <L7p:Expression1 stringValue="${found}"/>
+                <L7p:Operator operatorNull="null"/>
+                <L7p:Predicates predicates="included">
+                    <L7p:item dataType="included">
+                        <L7p:Type variableDataType="string"/>
+                    </L7p:item>
+                    <L7p:item binary="included">
+                        <L7p:RightValue stringValue="true"/>
+                    </L7p:item>
+                </L7p:Predicates>
+            </L7p:ComparisonAssertion>
+            <wsp:All wsp:Usage="Required">
+                <L7p:SetVariable>
+                    <L7p:Base64Expression stringValue="MTAy"/>
+                    <L7p:VariableToSet stringValue="error.code"/>
+                </L7p:SetVariable>
+                <L7p:SetVariable>
+                    <L7p:Base64Expression stringValue="QVBJIFBsYW4gTG9va3VwIGZvciBzdWJzY3JpYmVkIHBsYW5zICR7c3Vic2NyaWJlZF9wbGFuc30gd2l0aCBBUEkgSWQgJHthcGlJZH0gZmFpbGVkIQ=="/>
+                    <L7p:VariableToSet stringValue="error.message"/>
+                </L7p:SetVariable>
+                <wsp:All wsp:Usage="Required">
+                    <L7p:SetVariable>
+                        <L7p:Base64Expression stringValue="JHtlcnJvci5jb2RlfSwke3JlcXVlc3Quc2hhcmVkLmFhY3AuYW5hbHl0aWNzLmVycm9yLmNvZGVzfQ=="/>
+                        <L7p:VariableToSet stringValue="aacp.analytics.error.codes"/>
+                    </L7p:SetVariable>
+                    <L7p:SetVariable>
+                        <L7p:Base64Expression stringValue="JHtlcnJvci5tZXNzYWdlfSwke3JlcXVlc3Quc2hhcmVkLmFhY3AuYW5hbHl0aWNzLmVycm9yLm1lc3NhZ2VzfQ=="/>
+                        <L7p:VariableToSet stringValue="aacp.analytics.error.messages"/>
+                    </L7p:SetVariable>
+                    <L7p:ExportVariables>
+                        <L7p:ExportedVars stringArrayValue="included">
+                            <L7p:item stringValue="aacp.analytics.error.codes"/>
+                            <L7p:item stringValue="aacp.analytics.error.messages"/>
+                            <L7p:item stringValue="error.code"/>
+                            <L7p:item stringValue="error.message"/>
+                        </L7p:ExportedVars>
+                    </L7p:ExportVariables>
+                    <L7p:assertionComment>
+                        <L7p:Properties mapValue="included">
+                            <L7p:entry>
+                                <L7p:key stringValue="RIGHT.COMMENT"/>
+                                <L7p:value stringValue=" // analytics"/>
+                            </L7p:entry>
+                        </L7p:Properties>
+                    </L7p:assertionComment>
+                </wsp:All>
+                <L7p:FalseAssertion/>
+            </wsp:All>
+            <L7p:assertionComment>
+                <L7p:Properties mapValue="included">
+                    <L7p:entry>
+                        <L7p:key stringValue="RIGHT.COMMENT"/>
+                        <L7p:value stringValue=" // found?"/>
+                    </L7p:entry>
+                </L7p:Properties>
+            </L7p:assertionComment>
+        </wsp:OneOrMore>
+        <wsp:OneOrMore wsp:Usage="Required">
+            <wsp:All wsp:Usage="Required">
+                <L7p:EvaluateJsonPathExpressionV2>
+                    <L7p:Expression stringValue="$.id"/>
+                    <L7p:OtherTargetMessageVariable stringValue="apiPlanJson"/>
+                    <L7p:Target target="OTHER"/>
+                    <L7p:VariablePrefix stringValue="_id"/>
+                </L7p:EvaluateJsonPathExpressionV2>
+                <L7p:EvaluateJsonPathExpressionV2>
+                    <L7p:Expression stringValue="$.name"/>
+                    <L7p:OtherTargetMessageVariable stringValue="apiPlanJson"/>
+                    <L7p:Target target="OTHER"/>
+                    <L7p:VariablePrefix stringValue="_name"/>
+                </L7p:EvaluateJsonPathExpressionV2>
+                <L7p:EvaluateJsonPathExpressionV2>
+                    <L7p:Expression stringValue="$.quotaDetails.enabled"/>
+                    <L7p:OtherTargetMessageVariable stringValue="apiPlanJson"/>
+                    <L7p:Target target="OTHER"/>
+                    <L7p:VariablePrefix stringValue="_quotaEnabled"/>
+                </L7p:EvaluateJsonPathExpressionV2>
+                <L7p:EvaluateJsonPathExpressionV2>
+                    <L7p:Expression stringValue="$.quotaDetails.quota"/>
+                    <L7p:OtherTargetMessageVariable stringValue="apiPlanJson"/>
+                    <L7p:Target target="OTHER"/>
+                    <L7p:VariablePrefix stringValue="_quota"/>
+                </L7p:EvaluateJsonPathExpressionV2>
+                <L7p:EvaluateJsonPathExpressionV2>
+                    <L7p:Expression stringValue="$.quotaDetails.timeUnit"/>
+                    <L7p:OtherTargetMessageVariable stringValue="apiPlanJson"/>
+                    <L7p:Target target="OTHER"/>
+                    <L7p:VariablePrefix stringValue="_timeUnit"/>
+                </L7p:EvaluateJsonPathExpressionV2>
+                <L7p:EvaluateJsonPathExpressionV2>
+                    <L7p:Expression stringValue="$.rateLimitDetails.enabled"/>
+                    <L7p:OtherTargetMessageVariable stringValue="apiPlanJson"/>
+                    <L7p:Target target="OTHER"/>
+                    <L7p:VariablePrefix stringValue="_rateLimitEnabled"/>
+                </L7p:EvaluateJsonPathExpressionV2>
+                <L7p:EvaluateJsonPathExpressionV2>
+                    <L7p:Expression stringValue="$.rateLimitDetails.maxRequestRate"/>
+                    <L7p:OtherTargetMessageVariable stringValue="apiPlanJson"/>
+                    <L7p:Target target="OTHER"/>
+                    <L7p:VariablePrefix stringValue="_maxRequestRate"/>
+                </L7p:EvaluateJsonPathExpressionV2>
+                <L7p:SetVariable>
+                    <L7p:Base64Expression stringValue="JHtfaWQucmVzdWx0fQ=="/>
+                    <L7p:VariableToSet stringValue="aacp.analytics.apiplan.id"/>
+                </L7p:SetVariable>
+                <L7p:SetVariable>
+                    <L7p:Base64Expression stringValue="JHtfbmFtZS5yZXN1bHR9"/>
+                    <L7p:VariableToSet stringValue="aacp.analytics.apiplan.name"/>
+                </L7p:SetVariable>
+                <L7p:SetVariable>
+                    <L7p:Base64Expression stringValue="JHtfcXVvdGFFbmFibGVkLnJlc3VsdH0="/>
+                    <L7p:VariableToSet stringValue="aacp.analytics.apiplan.quotaEnabled"/>
+                </L7p:SetVariable>
+                <L7p:SetVariable>
+                    <L7p:Base64Expression stringValue="JHtfcXVvdGEucmVzdWx0fQ=="/>
+                    <L7p:VariableToSet stringValue="aacp.analytics.apiplan.quota"/>
+                </L7p:SetVariable>
+                <L7p:SetVariable>
+                    <L7p:Base64Expression stringValue="JHtfdGltZVVuaXQucmVzdWx0fQ=="/>
+                    <L7p:VariableToSet stringValue="aacp.analytics.apiplan.timeunit"/>
+                </L7p:SetVariable>
+                <L7p:SetVariable>
+                    <L7p:Base64Expression stringValue="JHtfcmF0ZUxpbWl0RW5hYmxlZC5yZXN1bHR9"/>
+                    <L7p:VariableToSet stringValue="aacp.analytics.apiplan.rateLimitEnabled"/>
+                </L7p:SetVariable>
+                <L7p:SetVariable>
+                    <L7p:Base64Expression stringValue="JHtfbWF4cmVxdWVzdHJhdGUucmVzdWx0fQ=="/>
+                    <L7p:VariableToSet stringValue="aacp.analytics.apiplan.maxrequestrate"/>
+                </L7p:SetVariable>
+                <L7p:ExportVariables>
+                    <L7p:ExportedVars stringArrayValue="included">
+                        <L7p:item stringValue="aacp.analytics.apiplan.id"/>
+                        <L7p:item stringValue="aacp.analytics.apiplan.maxrequestrate"/>
+                        <L7p:item stringValue="aacp.analytics.apiplan.name"/>
+                        <L7p:item stringValue="aacp.analytics.apiplan.quota"/>
+                        <L7p:item stringValue="aacp.analytics.apiplan.quotaEnabled"/>
+                        <L7p:item stringValue="aacp.analytics.apiplan.rateLimitEnabled"/>
+                        <L7p:item stringValue="aacp.analytics.apiplan.timeunit"/>
+                        <L7p:item stringValue="aacp.analytics.error.codes"/>
+                        <L7p:item stringValue="aacp.analytics.error.messages"/>
+                        <L7p:item stringValue="error.code"/>
+                        <L7p:item stringValue="error.message"/>
+                    </L7p:ExportedVars>
+                </L7p:ExportVariables>
+            </wsp:All>
+            <L7p:TrueAssertion/>
+            <L7p:assertionComment>
+                <L7p:Properties mapValue="included">
+                    <L7p:entry>
+                        <L7p:key stringValue="RIGHT.COMMENT"/>
+                        <L7p:value stringValue=" // analytics"/>
+                    </L7p:entry>
+                </L7p:Properties>
+            </L7p:assertionComment>
+        </wsp:OneOrMore>
+    </wsp:All>
+</wsp:Policy>
