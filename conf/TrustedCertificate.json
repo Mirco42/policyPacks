@@ -1,0 +1,96 @@
+{
+    "trustedcertificate": [
+        {
+            "name": "obsidian-backend",
+            "certificateData": {
+                "issuerName": "CN%3Dobsidian-dev-root%2CO%3DAPIIDA%2CL%3DDarmstadt%2CST%3DHessen%2CC%3DDE",
+                "serialNumber": "527719414407027108511055641187593115012665052542",
+                "subjectName": "CN%3Dobsidian-backend%2CO%3DAPIIDA%2CL%3DDarmstadt%2CST%3DHessen%2CC%3DDE",
+                "encoded": "MIIGSTCCBDGgAwIBAgIUXG\/ByCMDCftV8P1j+g43lYyGDX4wDQYJKoZIhvcNAQELBQAwXzELMAkGA1UEBhMCREUxDzANBgNVBAgMBkhlc3NlbjESMBAGA1UEBwwJRGFybXN0YWR0MQ8wDQYDVQQKDAZBUElJREExGjAYBgNVBAMMEW9ic2lkaWFuLWRldi1yb290MB4XDTIyMDkwNzEyNDMyOVoXDTIzMTAwNjEyNDMyOVowXjELMAkGA1UEBhMCREUxDzANBgNVBAgMBkhlc3NlbjESMBAGA1UEBwwJRGFybXN0YWR0MQ8wDQYDVQQKDAZBUElJREExGTAXBgNVBAMMEG9ic2lkaWFuLWJhY2tlbmQwggIiMA0GCSqGSIb3DQEBAQUAA4ICDwAwggIKAoICAQCHDC67Qnj459Y0BKCV5XoZPju4FdL7UonVYk3N9CBu0jzLc0\/AGCkwVTk1Gi+cJ0MpclACYH8dbdS7iPBQC3O9HUVwuYVwoUuNXozzqxeiBiJVG++bDgd2+HzwgwPC85+pIdkjCEQCyr9lYJK9kE5uz4L\/Pbd4q6r4afMXuznFUak5UieiwXBShRtKw1QT5yL3xcNGcNMP7AseHATGWc8dPLaJ6QdvqfbDmdYgJrTM5gmgflRXQdyqUzyORJ\/pQci5eQQd66626YckC8\/HNF1gbcUAtP3AIh+IzMLKOHH5tGZL61hOA1DK1OZE14vZFIygjIE1IaBmFN68vnFFIPLwQFgB4pOHR6fOqAqVgrtriPDSswsvfF0CXeS6aio9VSfqL2E6VbJtmru2y9pmNPXnGNEMDvxuYEBokhxpsXeIBGaMcA0TFatmfnxgMX23Fut8pKtliGRWLmnaUsfmw8k3B7z4jCSVZ\/vfhcH1BwUdWBSJP+dG3SCGBECAzuNWF1nI\/yLfdbxsXvKd8oV4MORttxjTfdBWlmLIUlgxsPFbBzDB1t1eaLPuCVG6tvNyaZdkCtwFw0oPOuaGT4DrNRPjiHGoduTfcn4jDnYzYdxKtjBDLTvsw5+om3YUCLEwXbuNlXiCLx1Xb+SNF9sEQxjVbLX\/Dwu3jOBBAs68LODDiQIDAQABo4H9MIH6MAsGA1UdDwQEAwIHgDAJBgNVHRMEAjAAMIGfBgNVHREEgZcwgZSCFmJhY2tlbmQub2JzaWRpYW4ubG9jYWyCGCouYmFja2VuZC5vYnNpZGlhbi5sb2NhbIIJbG9jYWxob3N0gg8qLmRldi5sb2NhbGhvc3SCFGhvc3QuZG9ja2VyLmludGVybmFsghYqLmhvc3QuZG9ja2VyLmludGVybmFsghBvYnNpZGlhbi1iYWNrZW5khwR\/AAABMB0GA1UdDgQWBBQ3d\/Nz6OiMT5oh5N9SpP3m+4kd5TAfBgNVHSMEGDAWgBQuV3R6ogcRzqbqX408vDsw2sMv5TANBgkqhkiG9w0BAQsFAAOCAgEAgVuFhmJtLWx4ieX\/8Jql8FoUc5jfZ94tCtrmktYZEnjDJoCGgIb6iaMc38x2aziR8UGK3bXdXO1pFylkxVcdUHyPg9Lsg1RmnQHNTdJmads4igXa60+REFAivvrTdvb\/4HQXbfBjL1wTQg+X3XyFQtqIGQ4UCirC0RRAqncxa09B0XsYGlhvXLUkY4DGn\/WAsswrNEBn2oRHgvhGd3wSMSGUa0KVAjuq14flWmH8SOWVRM4Z3zf4jMqY8EAdTOMby52dR9k43m4yCk1yg+LGleYbd8sbnDZkBVVyBgR37lm\/tpHnueoZoRPEvPqGkfbX\/6TWFB0X+gIwgmzoouiHjLLxaqy3U8iAuMUdK8U4GmaNXJeLcBwYg0OvtvBrmcSwc0rzGQtZKs6F+g9lc6+hsOsJNyhgucVbVYoR+YgYsASwAzqlOslba4oTpa0JBHKizu6wyrVEyzr43duMMaPHnBRMVxCwX6uroCJbEa8O2GLInfNJ5+WKilFK2mCdYNX\/55GbinG4E6eC8CqtLsX21d0j+BptKSJWWsJrx7\/qK1hVDqRlXmpCLuaVP4Zw4ZNpkM51K5WqzE2cbNcfGMFM8NRMBDQNfcUFkcAOG6TZRGR5Kwgjq4mp3a35dXvaSVjcTmHsg9NrKFfKP3qu\/E+TD6k5rbkdRhnOhLUuB1qaTDs="
+            },
+            "properties": {
+                "property": [
+                    {
+                        "key": "revocationCheckingEnabled",
+                        "booleanValue": "true"
+                    },
+                    {
+                        "key": "trustAnchor",
+                        "booleanValue": "false"
+                    },
+                    {
+                        "key": "trustedAsSamlAttestingEntity",
+                        "booleanValue": "false"
+                    },
+                    {
+                        "key": "trustedAsSamlIssuer",
+                        "booleanValue": "false"
+                    },
+                    {
+                        "key": "trustedForSigningClientCerts",
+                        "booleanValue": "false"
+                    },
+                    {
+                        "key": "trustedForSigningServerCerts",
+                        "booleanValue": "false"
+                    },
+                    {
+                        "key": "trustedForSsl",
+                        "booleanValue": "false"
+                    },
+                    {
+                        "key": "verifyHostname",
+                        "booleanValue": "false"
+                    }
+                ]
+            },
+            "id": "502c36baf2d04c8b0066ebb6b962ad10"
+        },
+        {
+            "name": "obsidian-frontend",
+            "certificateData": {
+                "issuerName": "CN%3Dobsidian-dev-root%2CO%3DAPIIDA%2CL%3DDarmstadt%2CST%3DHessen%2CC%3DDE",
+                "serialNumber": "413032339074917397762366395381897579040785109572",
+                "subjectName": "CN%3Dobsidian-frontend%2CO%3DAPIIDA%2CL%3DDarmstadt%2CST%3DHessen%2CC%3DDE",
+                "encoded": "MIIGCTCCA\/GgAwIBAgIUSFkCuTlEj4JsToQfT3DHTmqJEkQwDQYJKoZIhvcNAQELBQAwXzELMAkGA1UEBhMCREUxDzANBgNVBAgMBkhlc3NlbjESMBAGA1UEBwwJRGFybXN0YWR0MQ8wDQYDVQQKDAZBUElJREExGjAYBgNVBAMMEW9ic2lkaWFuLWRldi1yb290MB4XDTIyMDkwNzEyNDMzNVoXDTIzMTAwNjEyNDMzNVowXzELMAkGA1UEBhMCREUxDzANBgNVBAgMBkhlc3NlbjESMBAGA1UEBwwJRGFybXN0YWR0MQ8wDQYDVQQKDAZBUElJREExGjAYBgNVBAMMEW9ic2lkaWFuLWZyb250ZW5kMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA2VdgM3jkCprxnq3GXQXTUPa9mWAiUdz6giySwiY5wwfTLMLXPOIjXIiAIXE4ZP6Lrl99TXCWm20Dc68hnTxsmDoJfVTjdnj9ROSv0m2X8nXiZMSPecOZmptBWLphOnRD3pKMJTKGgZDKvdrHDGpJn5pSpw5He1hib9aDiw2q4lvUERkAmVEjoyEjhcg7afE+nGrHG32v2OYYHa3sKKb+GZ7CyUswNMRn0+VIYRVhbmi51zq6Q4znm8sVpdzjg4O7k+vbo6d2TAC06K9kdNY+WXXj6fAUaDjl7f4hbXk0msHl6zgxSPoEcw5KYmOvATc2FgS1VKkT5OPkbQVTbC0j6+gPW7yzM6uaGRdM\/yYWl5HADSICTuzDwnuGHI6zjDimm77MbT2IaQVISLooZcChoprPDLgEMIPELo+QzbOZDkZPOFQKTKQmuWNH37vJ2po52E+Fs4zwTs4tm91H3S7zTBTfdUNn8uDuLuN8Ubp0QpYwJ1Icf36lf9daB3qHRepLfTFUjaIHcJyRqi\/\/T0w4KSxD9m8lG8releZoqF04+nuSju42vlREWsruM2uTE7EB7M7CiduHLzOed7q7nEKdregEXlUZwYybqdEKLk7SHtlfdBtlqrDtBa8obp+SUGP9YypjQ2TLZT7Emk0DpPgzTth4+9847pXo9iXwxUNfRx8CAwEAAaOBvDCBuTALBgNVHQ8EBAMCB4AwCQYDVR0TBAIwADBfBgNVHREEWDBWghdmcm9udGVuZC5vYnNpZGlhbi5sb2NhbIIZKi5mcm9udGVuZC5vYnNpZGlhbi5sb2NhbIIJbG9jYWxob3N0gg8qLmRldi5sb2NhbGhvc3SHBH8AAAEwHQYDVR0OBBYEFIFMcliVw4M\/uybtaXLRvLEkXTSrMB8GA1UdIwQYMBaAFC5XdHqiBxHOpupfjTy8OzDawy\/lMA0GCSqGSIb3DQEBCwUAA4ICAQCI7HWqh5DgfPKyz3kI5UTECxON3bO9YevLtiW4dkZDH+yAFkFQqB5RaGr0ptPH\/deHDAgUTnatfKTGvjHWSgxK5neMHLN\/Wxtz\/skqqSL7uDCHZFMy8i0jSEcbNpjhV80ZrUs12AID25EKc31ZhGYOzdybCiXqPMrFoEQHSM83VzDnQ+MARWRgNh0Z2xngETYMw0ozDCRg70FJd6tXR1mZsnZmpq1TGHfhRovaFbrudZUVIQghnAJsEO4Ttw4sDE0zaZ58t6cf0T9yk1lS9DZw8fOUTRpWgtm82JbrdhdRHdJOTmkZZLnF0mDGvCZTbDllsdmH9KoaxxzWajuXZIVnRrdp10P5OwDPYkKgBqlhsq7S7wIm7kckijS6j8c3rcezLVXsd6nOWgN+UqoVVTmGcfAHFR+p9aRnU\/lsMZ9rSxCe2r76ruJmJjXScueZnSeNz8M374jXigwA0B4oCVEARegmh4I6iOs\/t5bijZMsyAbKGhx278l0dCTMwRxkyX42KaeR2lyT2r2YF2kLBIYvHWrHjWmo5ZZXAcojkOIfKp\/hB\/gJu5ccO9f1+IvCDTed+lFcLGFO+3gV2kul8JiSznHY6SEhVzry\/jCqn0Po2TBJMCpVCWdSFY84sXPFmXpU75STtZoW48pTln3ACotj3mg1o24R3te2OWETVC1V9g=="
+            },
+            "properties": {
+                "property": [
+                    {
+                        "key": "revocationCheckingEnabled",
+                        "booleanValue": "true"
+                    },
+                    {
+                        "key": "trustAnchor",
+                        "booleanValue": "false"
+                    },
+                    {
+                        "key": "trustedAsSamlAttestingEntity",
+                        "booleanValue": "false"
+                    },
+                    {
+                        "key": "trustedAsSamlIssuer",
+                        "booleanValue": "false"
+                    },
+                    {
+                        "key": "trustedForSigningClientCerts",
+                        "booleanValue": "false"
+                    },
+                    {
+                        "key": "trustedForSigningServerCerts",
+                        "booleanValue": "false"
+                    },
+                    {
+                        "key": "trustedForSsl",
+                        "booleanValue": "false"
+                    },
+                    {
+                        "key": "verifyHostname",
+                        "booleanValue": "false"
+                    }
+                ]
+            },
+            "id": "502c36baf2d04c8b0066ebb6b962acfc"
+        }
+    ]
+}
