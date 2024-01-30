@@ -41,91 +41,11 @@
             "id": "f6946126d11721bd0d485fdcbbb15680"
         },
         {
-            "guid": "c6944e67-34f6-429c-b20f-49ce7295e3c1",
-            "policyDetail": {
-                "folderId": "f6946126d11721bd0d485fdcbbb1563c",
-                "guid": "c6944e67-34f6-429c-b20f-49ce7295e3c1",
-                "id": "f6946126d11721bd0d485fdcbbb15695",
-                "name": "abc2",
-                "policyType": "Include",
-                "properties": {
-                    "property": [
-                        {
-                            "key": "hasRouting",
-                            "booleanValue": "false"
-                        },
-                        {
-                            "key": "revision",
-                            "longValue": "1"
-                        },
-                        {
-                            "key": "soap",
-                            "booleanValue": "false"
-                        }
-                    ]
-                }
-            },
-            "resources": {
-                "resourceSet": [
-                    {
-                        "tag": "policy",
-                        "resource": [
-                            {
-                                "type": "policy",
-                                "content": "pp\/policyPack1\/abc2.xml"
-                            }
-                        ]
-                    }
-                ]
-            },
-            "id": "f6946126d11721bd0d485fdcbbb15695"
-        },
-        {
-            "guid": "af50b76c-78a6-49fc-9a6a-8b7d3517e0fc",
+            "guid": "32e6aa39-211a-4b45-a4f9-abacc32000ec",
             "policyDetail": {
                 "folderId": "f6946126d11721bd0d485fdcbbb156ac",
-                "guid": "af50b76c-78a6-49fc-9a6a-8b7d3517e0fc",
-                "id": "3e18d208188013eddfd95a24cca4225e",
-                "name": "abc3",
-                "policyType": "Include",
-                "properties": {
-                    "property": [
-                        {
-                            "key": "hasRouting",
-                            "booleanValue": "false"
-                        },
-                        {
-                            "key": "revision",
-                            "longValue": "2"
-                        },
-                        {
-                            "key": "soap",
-                            "booleanValue": "false"
-                        }
-                    ]
-                }
-            },
-            "resources": {
-                "resourceSet": [
-                    {
-                        "tag": "policy",
-                        "resource": [
-                            {
-                                "type": "policy",
-                                "content": "pp\/policyPack2\/abc3.xml"
-                            }
-                        ]
-                    }
-                ]
-            },
-            "id": "3e18d208188013eddfd95a24cca4225e"
-        },
-        {
-            "guid": "80ec82cd-3fb4-4a30-b098-5c17339a8681",
-            "policyDetail": {
-                "folderId": "f6946126d11721bd0d485fdcbbb156ac",
-                "guid": "80ec82cd-3fb4-4a30-b098-5c17339a8681",
-                "id": "f6946126d11721bd0d485fdcbbb15705",
+                "guid": "32e6aa39-211a-4b45-a4f9-abacc32000ec",
+                "id": "db3fafea8b12f3ef72dc540edb405bb4",
                 "name": "abc4",
                 "policyType": "Include",
                 "properties": {
@@ -158,7 +78,47 @@
                     }
                 ]
             },
-            "id": "f6946126d11721bd0d485fdcbbb15705"
+            "id": "db3fafea8b12f3ef72dc540edb405bb4"
+        },
+        {
+            "guid": "6bf4434f-550e-4600-96fe-15d36ec2e8a3",
+            "policyDetail": {
+                "folderId": "f6946126d11721bd0d485fdcbbb156ac",
+                "guid": "6bf4434f-550e-4600-96fe-15d36ec2e8a3",
+                "id": "f6946126d11721bd0d485fdcbbb156ee",
+                "name": "abc3",
+                "policyType": "Include",
+                "properties": {
+                    "property": [
+                        {
+                            "key": "hasRouting",
+                            "booleanValue": "false"
+                        },
+                        {
+                            "key": "revision",
+                            "longValue": "4"
+                        },
+                        {
+                            "key": "soap",
+                            "booleanValue": "false"
+                        }
+                    ]
+                }
+            },
+            "resources": {
+                "resourceSet": [
+                    {
+                        "tag": "policy",
+                        "resource": [
+                            {
+                                "type": "policy",
+                                "content": "pp\/policyPack2\/abc3.xml"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "id": "f6946126d11721bd0d485fdcbbb156ee"
         }
     ]
 }
